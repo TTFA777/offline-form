@@ -1,17 +1,25 @@
-const jsonServer = require("json-server")
-const server = jsonServer.create();
-const router = jsonServer.router("./db.json");
-const middlewares = jsonServer.defaults({
-  static: "./build",
-});
+const express = require('express');
+const app = express();
 const port = process.env.PORT || 8000;
-server.use(middlewares);
-server.use(
-  jsonServer.rewriter({
-    "/api/*": "/$1",
-  })
-);
-server.use(router);
-server.listen(port, () => {
-  console.log("Server is running");
+//Core Node Modules
+const fs = require('fs');
+const path = require('path');
+
+//Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+express.static(path_join(__dirname, '../client/build'))
+
+    app.get('*', function(req, res) {
+      res.sendFile('index.html', { root: __dirname }, function(err) {
+        if (err) {
+          res.status(500).send(err);
+        }
+      });
+    });
+
+app.listen(port, err => {
+  if (err) console.info(`Error: The server failed to start on ${port}`);
+  else console.info(`****** Node server is running on ${port} ******`);
 });
