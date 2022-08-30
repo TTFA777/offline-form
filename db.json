@@ -1,0 +1,26 @@
+{
+  "leads": [
+    {
+      "name": "Thato",
+      "surname": "Teffo",
+      "id_num": "9910295517081",
+      "address": "Nabane village stand no 42",
+      "city": "Tzaneen",
+      "zip_code": "0857",
+      "profile_pic": "C:\\fakepath\\69257603_738210726611885_1764893445945556992_o.jpg",
+      "fingers": "C:\\fakepath\\IMG_0005.JPG",
+      "id": 1
+    },
+    {
+      "name": "Naledi",
+      "surname": "Maboja",
+      "id_num": "00149555178081",
+      "address": "Pretoria north",
+      "city": "Mokopane",
+      "zip_code": "4141",
+      "profile_pic": "C:\\fakepath\\IMG_0005.JPG",
+      "fingers": "C:\\fakepath\\IMG_0006.JPG",
+      "id": 2
+    }
+  ]
+}
