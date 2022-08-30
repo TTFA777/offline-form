@@ -9,7 +9,7 @@ const path = require('path');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-express.static(path_join(__dirname, '../client/build'))
+    app.use(express.static(path.join(__dirname, '/client/build')));
 
     app.get('*', function(req, res) {
       res.sendFile('index.html', { root: __dirname }, function(err) {
